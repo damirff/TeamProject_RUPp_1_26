@@ -1,0 +1,31 @@
+def calculate():
+    print("Простой калькулятор")
+    print("Доступные операции: +, -, *, /")
+
+    try:
+        num1 = float(input("Введите первое число: "))
+        operation = input("Введите операцию (+, -, *, /): ")
+        num2 = float(input("Введите второе число: "))
+
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        elif operation == '/':
+            if num2 == 0:
+                print("Ошибка: деление на ноль!")
+                return
+            result = num1 / num2
+        else:
+            print("Неверная операция")
+            return
+
+        print(f"Результат: {num1} {operation} {num2} = {result}")
+
+    except ValueError:
+        print("Ошибка: введите корректные числа.")
+
+if __name__ == "__main__":
+    calculate()
